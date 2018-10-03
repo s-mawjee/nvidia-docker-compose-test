@@ -3,6 +3,8 @@ version: "3"
 services:
   pytorch:
     image: pytorch
+    deploy:
+      replicas: 5
     volumes: 
       - ./pytorch/data:/usr/src/app/data
     build: ./pytorch/
