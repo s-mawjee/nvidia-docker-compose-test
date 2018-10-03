@@ -1,16 +1,8 @@
-version: '3.7'
+version: "3"
 
 services:
-  program:
-    image: program
-    volumes: 
-      - ./program/data:/usr/src/app/data
-    build: ./program/
-  
   pytorch:
     image: pytorch
-    deploy:
-      replicas: 3
     volumes: 
       - ./pytorch/data:/usr/src/app/data
     build: ./pytorch/
