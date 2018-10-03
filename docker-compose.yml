@@ -1,0 +1,17 @@
+version: '2.3'
+
+services:
+  program:
+    image: program
+    runtime: runc
+    volumes: 
+      - ./program/data:/usr/src/app/data
+    build: ./program/
+  
+  pytorch:
+    image: pytorch
+    runtime: nvidia
+    scale: 3
+    volumes: 
+      - ./pytorch/data:/usr/src/app/data
+    build: ./pytorch/
